@@ -1,0 +1,630 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,input {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {          /*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+     /*去掉鼠标放上去之后显示的边框*/
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;               /*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+    vertical-align: top;
+     
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+	/*防止多行文本框拖动*/
+    resize: none;
+}
+
+img {
+    border: 0;
+    /*  去掉图片底侧默认的3像素空白缝隙*/
+    vertical-align: middle;
+}
+
+
+table {
+	/*合并外边线*/
+    border-collapse: collapse;          
+}
+
+
+body {
+    font: 12px/150% "microsoft yahei" "\5b8b\4f53";   /*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+	/*京东的主色调*/
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none
+}
+
+/*头部导航开始*/
+.shortcut {
+	height: 30px;
+	line-height: 30px;
+	background-color: #f1f1f1;
+}
+
+.dt,
+/*这里需要使用.shortcut提升特定性，
+ * 因为后面有同样的padding属性
+ 我们希望保持这个属性*/
+.shortcut .fore {
+	/*扩宽dt的宽度,用于放置小三角*/
+	padding: 0 25px 0 10px;
+	position: relative;
+}
+
+.dt i,
+.fore i {
+	font: 400 15px/15px "宋体";
+	position: absolute;
+	right: 5px;
+	top: 13px;
+	/*给i指定高度，切掉上面的部分*/
+	height: 7px;
+	overflow: hidden;
+	width: 15px;
+}
+
+.dt s, 
+.fore s {
+	/*使用绝对定位或者block设置*/
+	position: absolute;
+	top: -8px;
+	left: 0;
+	
+}
+
+.fr li {
+	float: left;
+	padding: 0 10px;
+}
+
+/*这里不能直接写.line,因为.line的特定性得分(10)小于.fr li(11),
+ 所以在执行时，.line是先执行的*/
+.fr .line {
+	width: 1px;
+	height: 12px;
+	background-color: #ddd;
+	margin-top: 9px;
+	padding: 0;
+}
+.fr li{
+	font-size: 12px;
+}
+.shortcut .tel-jd{
+	padding: 0 10px 0 25px;
+	position: relative;
+}
+
+.tel{
+	position: absolute;
+	width: 15px;
+	height: 10px;
+	background: url(../img/tel-jd.jpg) no-repeat;
+	top: 10px;
+	left: 5px;
+}
+
+/*顶部结束*/
+/*topbanner start*/
+.topbanner{
+	background-color: #1c2b39;
+}
+.tp{
+	position: relative;
+}
+.close-banner{
+	position: absolute;
+	right: 25px;
+	top: 5px;
+	background: url(../img/tel-jd.jpg) no-repeat;
+	width: 15px;
+	height: 19px;
+}
+.close-banner:hover{
+	/*从底部开始读取图片*/
+	background-position: bottom;
+}
+/*topbanner end*/
+
+/* logo部分开始 */
+.logo{
+	position: relative;
+	width:190px;
+	height: 120px;
+	/*background-color: pink;*/
+	float: left;
+	overflow: hidden;
+	margin:20px 0;
+}
+.logo .jd-a{
+	display: block;
+	/*大小和logo一样即可*/
+	width: 134px;
+	height: 120px;
+	margin-top: -10px;
+	background-image: url(../img/sprite2.png);
+	background-position: 154px 155px;
+	overflow: hidden;
+}
+
+.jd-a:hover{
+	/*显示背景图像*/
+}
+
+.search{
+	width: 550px;
+	height: 36px;
+	background-color: #e1251b;
+	float: left;
+	margin-top: 25px;
+}
+.search input{
+	width: 488px;
+	height: 32px;
+	background-color: white;
+	margin-top: 2px;
+	margin-left: 2px;
+	text-indent: 17px;
+	color: #666;
+	font: 14px/32px "microsoft yahei";
+	float: left;
+}
+.search button{
+	/*由于表单属于行内块元素，所以input和button之间有空隙，所以导致计算好的宽度存在问题
+	 所以需要给其添加浮动*/
+	width: 58px;
+	height: 36px;
+	background-color: #e1251b;
+	float: left;
+	font: 16px/36px "microsoft yahei";
+	color: #fff;
+	/*为按钮设置手势*/
+	cursor: pointer;
+}
+.car{
+	width: 81px;
+	height: 38px;
+	/*background-color: blue;*/
+	float: right;
+	margin-right: 112px;
+	margin-top: 25px;
+	padding-left: 51px;
+	border: 1px #eeeeee solid;
+	/*设置字体上下居中：行高38px,而盒子宽度就是38px,从而字体就会居中*/
+	line-height: 38px;
+	position: relative;
+	font-size: 12px;
+}
+.icon1{
+	position: absolute;
+	top: 8px;
+	left: 18px;
+	width: 16px;
+	height: 16px;
+	background: url(../img/icon.png) no-repeat;
+}
+.icon2{
+	font:400 13px/13px simsun;
+	position: absolute;
+	top: 13px;
+	right: 10px;
+}
+
+.icon3{
+	position: absolute;
+	top: 1px;
+	left: 29px;
+	width: 18px;
+	height: 14px;
+	background-color: #e1251b;
+	border: 1px solid #e1251b;
+	border-radius: 45px;
+	/*需要指定行高，否则它会继承car类的行高36px,而字体大小为12px,就会掉下去*/
+	font: 12px/14px "microsoft yahei";
+	text-align: center;
+	color: #fff;
+}
+.promo{
+	float: right;
+	width: 190px;
+	height: 120px;
+	margin: 10px 0 10px;
+}
+.promo .promo-a{
+	display: block;
+	width: 190px;
+	height: 120px;
+}
+
+.hotwords{
+	width: 560px;
+	float: left;
+	font: 13px/11px "microsoft yahei";
+	padding: 10px 0;
+	/*background-color: pink;*/
+}
+.hotwords a{
+	margin-right: 5px;
+}
+
+body .lo{
+	/*width: 1190px;*/
+	height: 140px;
+	position: relative;
+}
+
+.nav{
+	position: absolute;
+	width: 761px;
+	height: 40px;
+	/*background-color: pink;*/
+	bottom: 0;
+	left: 190px;
+	margin-bottom: 5px;
+	
+}
+.nav-ul{
+	margin-top: 20px;
+	height: 13px;
+	font:15px/13px "microsoft yahei";
+}
+.nav li{
+	float: left;
+	list-style: none;
+	
+	margin-right: 15px;
+}
+
+/*中间部分*/
+.middle{
+	height: 480px;
+	background-color: #f4f4f4;
+}
+.mid-left{
+	height: 470px;
+	width: 190px;
+	padding-top: 10px;
+	margin-top: 10px;
+	background-color: red;
+	margin-right: 10px;
+	float: left;
+}
+.mid-mid{
+	width: 790px;
+	height: 480px;
+	margin-right: 10px;
+	background-color: pink;
+	float: left;
+}
+
+/*页尾开始*/
+.footer{
+	background-color: #f4f4f4;
+	height: 568px;
+}
+/*多快好省开始*/
+.mod_service{
+	height: 103px;
+	/*background-color: purple;*/
+	overflow:hidden;
+	border-bottom: 1px #dedede solid;
+	
+}
+.mod_service_inner{
+	margin-top: 30px;
+	height: 42px;
+	/*background-color: black;*/
+}
+
+.mod_service_item{
+	width: 297px;
+	float: left;
+}
+
+.mod_service_unit{
+	margin-left: 50px;
+}
+
+.mod_service_duo{
+	width: 36px;
+	height: 41px;
+	background: url(../img/dkhs.png) no-repeat left bottom;
+	float: left;
+}
+.mod_service_unit p{
+	float: left;
+	text-align: center;
+	/*background-color: white;*/
+	font-size: 18px;
+	line-height: 42px;
+	margin-left: 5px;
+}
+.mod_service_kuai{
+	width: 36px;
+	height: 41px;
+	background-image: url(../img/dkhs.png);
+	border-image-repeat: no;
+	/*左，下*/
+	background-position: 267px 41px;
+	float: left;
+}
+
+.mod_service_hao{
+	width: 36px;
+	height: 41px;
+	background-image: url(../img/dkhs.png);
+	border-image-repeat: no;
+	/*左，下*/
+	background-position: 226px 41px;
+	float: left;
+}
+.mod_service_sheng{
+	width: 36px;
+	height: 41px;
+	background-image: url(../img/dkhs.png);
+	border-image-repeat: no;
+	/*左，下*/
+	background-position: 185px 41px;
+	float: left;
+}
+.mod_service_txt{
+	font-weight: bold;
+}
+/*多快好省结束*/
+
+/*帮助栏开始*/
+.mod_help{
+	height: 210px;
+	/*background-color: pink;*/
+	/*防止外边距重叠*/
+	overflow: hidden;
+	border-bottom: 1px #e1e1e1 solid;
+}
+.mod_help_inner{
+	height: 160px;
+	/*background-color: purple;*/
+	padding-top: 20px;
+	padding-bottom: 30px;
+	
+}
+.mod_help_nav{
+	width: 198px;
+	float: left;
+}
+.mod_help_nav h5{
+	font:800 16px "microsoft yahei";
+	margin-bottom: 15px;
+}
+
+.mod_help_nav_tit{
+	width: 198px;
+}
+.mod_help_nav_con li ,
+.mod_help_cover_con p{
+	font: 13px "microsoft yahei";
+	margin-bottom: 5px;
+}
+.mod_help_cover_more{
+	position: relative;
+}
+.mod_help_cover_more a{
+	position: absolute;
+	right: 0;
+	top: 0px;
+}
+
+.mod_copyright{
+	height: 265px;
+	/*background-color: pink;*/
+}
+.mod_copyright_inner{
+	margin: 0 auto;
+	width: 1190px;
+	padding: 15px 0;
+	text-align: center;
+}
+.mod_copyright_links a,
+.mod_copyright_links span,
+.mod_copyright_cert p{
+	margin-right: 7px;
+	font-size: 13px;
+}
+.mod_copyright_info{
+	padding: 10px;
+	
+}
+a{
+	text-decoration: none;
+}
+.mod_copyright_info a:hover {
+    color: #c81623;
+}
+.mod_copyright_cert p a,
+.mod_copyright_cert p{
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: #999999;
+}
+
+
+.mod_copyright_inter_ico_g{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	/*background-color: pink;*/
+	background-image: url(../img/dkhs.png);
+	/*右 下*/
+	background-position: 199px 79px;
+	margin-right: 5px;
+}
+.mod_copyright_inter_ico_c{
+	display: inline-block;
+	width: 15px;
+	height: 9px;
+	background-image: url(../img/dkhs.png);
+	/*右 下*/
+	background-position: 140px 76px;
+	margin-right: 5px;
+}
+.mod_copyright_inter_ico_s{
+	display: inline-block;
+	width: 15px;
+	height: 10px;
+	background-image: url(../img/dkhs.png);
+	background-position: 160px 79px;
+	margin-right: 5px;
+}
+.mod_copyright_inter_ico_e{
+	display: inline-block;
+	width: 15px;
+	height: 10px;
+	background-image: url(../img/dkhs.png);
+	background-position: 180px 79px;
+	margin-right: 5px;
+}
+.mod_copyright_inter_ico_t{
+	display: inline-block;
+	width: 15px;
+	height: 10px;
+	background-image: url(../img/dkhs.png);
+	background-position: 200px 62px;
+	margin-right: 5px;
+}
+.mod_copyright_cert p,
+.mod_copyright_cert a,
+.mod_copyright_cert span{
+	margin-right: 5px;
+}
+
+.mod_copyright_auth{
+	width: 1190px;
+	height: 36px;
+	/*background-color: pink;*/
+	margin: 25px auto;
+	text-align: center;
+}
+.mod_copyright_auth a{
+	display: inline-block;
+	width: 103px;
+	height: 32px;
+	/*background-color: purple;*/
+	margin: 0 auto;
+	margin-top: 2px;
+}
+.mod_copyright_auth_ico_1{
+	background-image: url(../img/dkhs.png);
+	background-position: 103px 234px;
+}
+
+.mod_copyright_auth_ico_2{
+	background-image: url(../img/dkhs.png);
+	background-position: 103px 197px;
+}
+
+.mod_copyright_auth_ico_3{
+	background-image: url(../img/dkhs.png);
+	background-position: 103px 159px;
+}
+
+.mod_copyright_auth_ico_4{
+	background-image: url(../img/dkhs.png);
+	background-position: 103px 122px;
+}
+
+.mod_copyright_auth_ico_5{
+	background-image: url(../img/dkhs.png);
+	background-position: 103px 85px;
+}
