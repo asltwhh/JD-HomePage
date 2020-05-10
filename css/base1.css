@@ -389,25 +389,18 @@ body .lo{
 	margin-right: 22px;
 }
 
-
-
-.isolate {
-	height: 10px;
-	/* background-color: green; */
-}
-	
+/* 中间部分 */
 .middle	{
 	/* background-color: red; */
-	display: block;
 	border-top: 1px solid #ddd;
 	background-color: #f4f4f4;
 }
 .middle_inner {
 	height: 470px;
 	/* background-color: pink; */
-	padding-top: 10px;
+	padding-top: 20px;
 }
-
+/* 中间左边 */
 .middle_left {
 	width: 190px;
 	height: 100%;
@@ -415,7 +408,7 @@ body .lo{
 	margin-right: 10px;
 	position: relative;
 }
-
+/* 中间图像 */
 .middle_imgage {
 	width: 590px;
 	height: 100%;
@@ -423,20 +416,20 @@ body .lo{
 	margin-right: 10px;
 	position: relative;
 }
-
+/* 中间右边 */
 .middle_right{
 	width: 190px;
 	height: 100%;
 	/* background-color: black; */
 }
-
+/* 注册登录部分 */
 .log_in {
 	width: 190px;
 	height: 100%;
 	background-color: #fff;
-	margin-right: 0px;
+	margin-right: 20px;
 }
-
+/* 中间左边的内容区 */
 .middle .bg{
 	width: 272px;
 	height: 480px;
@@ -458,9 +451,11 @@ body .lo{
     top: 0;
     left: 250px;
     z-index: 999;
+    /* 首先设置这部分的内容区宽度为0，当展开bg部分时再调整这部分的宽度，使得背景图片可以被看到 */
     width: 0;
     height: 480px;
     background-image: url(../img/bg_inner.jpg);
+    /* 设置图片的展开方式 */
     transition: all 0.8s;
 }
 .middle_left ul{
@@ -488,7 +483,7 @@ body .lo{
 	color: #c81623;
 }
 
-
+/* 中间图像的内容区 */
 .mid_nav{
 	position: absolute;
 	width: 113px;
@@ -521,7 +516,7 @@ body .lo{
 	border: 1px solid white;
 }
 
-
+/* 中间右边的内容区 */
 .middle_right a{
 	display: block;
 	height: 150px;
@@ -533,6 +528,7 @@ body .lo{
 	height: 100%;
 }
 
+/* 中间注册登录内容区 */
 .welcome1{
 	position: relative;
 	height: 70px;
@@ -681,58 +677,6 @@ body .lo{
 	width: 40%;
 	height: 40%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*页尾开始*/
